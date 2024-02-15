@@ -7,6 +7,7 @@ def clean_data(input1, input2, output):
     df_merged.drop(columns=['id'], inplace=True)
     df_merged.dropna(inplace=True)
     df_merged = df_merged[~df_merged['job'].str.contains('insurance', case=False, na=False)]
+    print(f"The shape of the cleaned DataFrame is: {df_merged.shape}")
     df_merged.to_csv(output, index=False)
     print(f"Data cleaned and saved to {output}")
 if __name__ == "__main__":
